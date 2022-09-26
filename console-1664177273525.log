@@ -1,0 +1,217 @@
+function add(){
+console.log("I am the Add ");
+}
+undefined
+add();
+VM198:2 I am the Add 
+undefined
+add(10,20);
+VM198:2 I am the Add 
+undefined
+add("AMit", 10,20);
+VM198:2 I am the Add 
+undefined
+add([10,20,30],"amit");
+VM198:2 I am the Add 
+undefined
+console.dir(add);
+VM459:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM198:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+function add(){
+console.log("I am the Add ", arguments.length);
+}
+undefined
+add();
+VM572:2 I am the Add  0
+undefined
+add(10,20);
+VM572:2 I am the Add  2
+undefined
+add(10,20,30,40,50);
+VM572:2 I am the Add  5
+undefined
+add(10,20,30,[40,50]);
+VM572:2 I am the Add  4
+undefined
+function add(){
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        sum = sum + arguments[i];
+    }
+    return sum;
+}
+undefined
+add(10,20);
+30
+add(1,2,3,4,5);
+15
+add();
+0
+add(1,2,3,"4",5);
+'645'
+function add(){
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        sum = sum + parseInt(arguments[i]);
+    }
+    return sum;
+}
+undefined
+add(1,2,3,"4",5);
+15
+parseInt("10");
+10
+parseInt("ten");
+NaN
+NaN + 100
+NaN
+add(1,2,3,"four",5);
+NaN
+isNaN(parseInt("amit"));
+true
+isNaN(parseInt("amit"))?0:10;
+0
+10/0;
+Infinity
+isFinite(10/0)?10:0
+0
+function add(){
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(1,2,3,"four",5);
+11
+function one(){ return "1";}
+undefined
+function two(){
+return 2;
+}
+undefined
+one;
+ƒ one(){ return "1";}
+parseInt(one);
+NaN
+parseInt(one());
+1
+add(one, two, "3", "four", 5);
+8
+function add(){
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        if(typeof arguments[i]==='function'){
+            arguments[i] = arguments[i](); 
+        }
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(one, two, "3", "four", 5);
+11
+function add(){
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0 ; j<arguments[i].length; j++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+            }
+            continue;
+        } else 
+        if(typeof arguments[i]==='function'){
+            arguments[i] = arguments[i](); 
+        } 
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+add(one, two, [3,"4"],"five", 6,"7");
+23
+function jQuery(){
+    console.log("I am JQuery ");
+}
+undefined
+var $ = jQuery;
+undefined
+typeof jQuery;
+'function'
+typeof $;
+'function'
+$("abcd");
+VM3154:2 I am JQuery 
+undefined
+$(document);
+VM3154:2 I am JQuery 
+undefined
+$([])
+VM3154:2 I am JQuery 
+undefined
+function add(){
+    var sum = 0;
+    for(var i = 0; i<arguments.length; i++){
+        if(arguments[i] instanceof Array){
+            for(var j = 0 ; j<arguments[i].length; j++){
+                sum = sum + (isNaN(parseInt(arguments[i][j]))?0:parseInt(arguments[i][j]));
+            }
+            continue;
+        } else 
+        if(typeof arguments[i]==='function'){
+            arguments[i] = arguments[i](); 
+        } 
+        sum = sum + (isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]));
+    }
+    return sum;
+}
+undefined
+function add(...args){
+    var sum = 0;
+    for(var i = 0; i<args.length; i++){
+        if(args[i] instanceof Array){
+            for(var j = 0 ; j<args[i].length; j++){
+                sum = sum + (isNaN(parseInt(args[i][j]))?0:parseInt(args[i][j]));
+            }
+            continue;
+        } else 
+        if(typeof args[i]==='function'){
+            args[i] = args[i](); 
+        } 
+        sum = sum + (isNaN(parseInt(args[i]))?0:parseInt(args[i]));
+    }
+    return sum;
+}
+undefined
+add(one, two, [3,"4"],"five", 6,"7");
+23
+function test(x,y,...z){
+    console.log(x, y, z);
+}
+undefined
+test(10,20,90,100,99,888,77);
+VM3599:2 10 20 (5) [90, 100, 99, 888, 77]
+undefined
+function test(x,y,...z,...a){
+    console.log(x, y, z);
+}
+VM3729:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+function test(x,y,...z){
+    console.log(arguments);
+    console.log(x, y, z);
+}
+undefined
+test(10,20,90,100,99,888,77);
+VM3829:2 Arguments(7) [10, 20, 90, 100, 99, 888, 77, callee: (...), Symbol(Symbol.iterator): ƒ]
+VM3829:3 10 20 (5) [90, 100, 99, 888, 77]
+undefined
+function test(x,y,...z){
+    console.log(arguments instanceof Array, z instanceof Array );
+    console.log(x, y, z);
+}
+undefined
+test(10,20,90,100,99,888,77);
+VM4095:2 false true
+VM4095:3 10 20 (5) [90, 100, 99, 888, 77]
+undefined
