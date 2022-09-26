@@ -1,0 +1,58 @@
+var prices = [10000,20000,30000,40000,1000,500];
+undefined
+typeof prices;
+'object'
+prices.length;
+6
+prices.push(9999);
+7
+prices;
+(7) [10000, 20000, 30000, 40000, 1000, 500, 9999]
+prices.unshift(11111);
+8
+prices;
+(8) [11111, 10000, 20000, 30000, 40000, 1000, 500, 9999]
+prices.pop();
+9999
+prices;
+(7) [11111, 10000, 20000, 30000, 40000, 1000, 500]
+prices.shift();
+11111
+prices;
+(6) [10000, 20000, 30000, 40000, 1000, 500]
+var map = {"Apple":100000, "Samsung":70000, "Nokia":11000};
+undefined
+typeof map;
+'object'
+map.Apple;
+100000
+map.Samsung;
+70000
+prices instanceof Array;
+true
+map instanceof Array;
+false
+map instanceof Object;
+true
+prices instanceof Object;
+true
+typeof Object;
+'function'
+typeof Array;
+'function'
+var prices = [10000,20000,30000,40000,1000,500];
+undefined
+prices;
+(6) [10000, 20000, 30000, 40000, 1000, 500]
+prices[0];
+10000
+prices= null;
+null
+prices;
+null
+prices[0];
+VM1116:1 Uncaught TypeError: Cannot read properties of null (reading '0')
+    at <anonymous>:1:7
+(anonymous) @ VM1116:1
+typeof prices;
+'object'

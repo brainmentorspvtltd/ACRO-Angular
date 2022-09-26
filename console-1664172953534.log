@@ -1,0 +1,103 @@
+var a ;
+undefined
+typeof a;
+'undefined'
+a = 100;
+100
+typeof a;
+'number'
+a = 100.20;
+100.2
+typeof a;
+'number'
+a =1;
+1
+typeof a;
+'number'
+a = 10000000000;
+10000000000
+typeof a;
+'number'
+a="Amit";
+'Amit'
+typeof a;
+'string'
+a = 'A';
+'A'
+typeof a;
+'string'
+a= 'Amit';
+'Amit'
+typeof a;
+'string'
+a = `hgdfhgdhfkghdkfjghdfk
+hgjkdhg
+hgkjd
+ghdkj`;
+'hgdfhgdhfkghdkfjghdfk\nhgjkdhg\nhgkjd\nghdkj'
+var a = 10;
+undefined
+var b = 20;
+undefined
+"A is "+a+" B is "+b;
+'A is 10 B is 20'
+`A is ${a} and B is ${b}`;
+'A is 10 and B is 20'
+a = true;
+true
+typeof a;
+'boolean'
+true + true;
+2
+true + false;
+1
+200 + true;
+201
+"Amit "+true;
+'Amit true'
+var a = Number.MAX_SAFE_INTEGER;
+undefined
+typeof a;
+'number'
+a;
+9007199254740991
+a++;
+9007199254740991
+a;
+9007199254740992
+a++;
+9007199254740992
+a;
+9007199254740992
+a++;
+9007199254740992
+a;
+9007199254740992
+a=9007199254740992n;
+9007199254740992n
+typeof a;
+'bigint'
+var b = 9007199254740992n;
+undefined
+var c = a + b;
+undefined
+c;
+18014398509481984n
+typeof c;
+'bigint'
+var e = BigInt("534534534543535345353524323423534");
+undefined
+typeof e;
+'bigint'
+e;
+534534534543535345353524323423534n
+e + 888;
+VM1318:1 Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+    at <anonymous>:1:3
+(anonymous) @ VM1318:1
+typeof typeof;
+VM1341:1 Uncaught SyntaxError: Unexpected token ';'
+typeof (e);
+'bigint'
+typeof (((e)));
+'bigint'

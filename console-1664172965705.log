@@ -1,0 +1,60 @@
+var arr = [10,20,30];
+undefined
+arr.splice(2,1);
+[30]
+arr;
+(2) [10, 20]
+var myname = "amit";
+undefined
+typeof myname;
+'string'
+typeof arr;
+'object'
+myname.toUpperCase();
+'AMIT'
+var e = new String("Amit");
+undefined
+typeof e;
+'object'
+e;
+String {'Amit'}
+myname;
+'amit'
+var r = myname.toUpperCase();
+undefined
+r;
+'AMIT'
+typeof r;
+'string'
+var q = new Number(10000);
+undefined
+typeof q;
+'object'
+var q2 = 1000;
+undefined
+typeof q2;
+'number'
+var w ;
+undefined
+typeof w;
+'undefined'
+w;
+undefined
+q;
+Number {10000}
+var dd ={}; // type object
+undefined
+dd;
+{}
+typeof dd;
+'object'
+var f = 100;
+undefined
+f;
+100
+f++;
+100
+f;
+101
+undefined == null;
+true
