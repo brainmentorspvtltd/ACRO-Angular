@@ -1,0 +1,27 @@
+Problem Statement
+
+We need Add N Numbers with different kind of parameter possibility
+
+add()   - 0
+add(1,2) - 3
+add(1,2,3) - 6
+add(1,2,3,4) - 10
+add(“1”,”2”,3,4) - 10
+add(“one”, “2”, “three” , 4) - 6
+function one(){
+return “1”;
+}
+function two(){
+return 2;
+}
+add(one, 2, two, “two”, “3”, 4)  12
+add(one,2,[“1”,2,”three”],3,4) 13
+add(one, 2, [“1”,one, two,”3”, 4,”four”],[1,2,3],4,”5”)
+Rest vs Spread 
+Let vs var
+Undefined vs null
+Why undefined == null true
+
+== vs ===
+
+
