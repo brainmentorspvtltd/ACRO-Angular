@@ -1,0 +1,52 @@
+function adder(x,y){
+    return x + y;
+}
+undefined
+const add = (x,y)=>x+y;
+undefined
+typeof add;
+'function'
+add(10,20);
+30
+const add1 = (x,y)=>{
+    console.log(x , y);
+    return x + y;
+}
+undefined
+add1(1000,2000);
+VM391:2 1000 2000
+3000
+const show = ()=>"Hi";
+undefined
+show();
+'Hi'
+const cube = num=>num**3;
+undefined
+cube(3);
+27
+typeof cube;
+'function'
+cube(10);
+1000
+cube(10);
+1000
+cube(10);
+1000
+cube(10);
+1000
+
+function show(x,y){
+    var z = x  + y;
+    console.log(" I am the Show ",z, this);
+}
+
+VM1079:1 Uncaught SyntaxError: Identifier 'show' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM1079:1
+
+function show2(x,y){
+    var z = x  + y;
+    console.log(" I am the Show ",z, this);
+}
+
+undefined

@@ -1,0 +1,63 @@
+var arr = [100,20,90,10,5,100,20,200];
+undefined
+// Imperative Way
+for(let i = 0 ; i<arr.length; i++){
+    console.log(arr[i]);
+}
+VM283:3 100
+VM283:3 20
+VM283:3 90
+VM283:3 10
+VM283:3 5
+VM283:3 100
+VM283:3 20
+VM283:3 200
+undefined
+arr.forEach
+ƒ forEach() { [native code] }
+// Declarative Way
+arr.forEach(element=>console.log(element));
+VM510:2 100
+VM510:2 20
+VM510:2 90
+VM510:2 10
+VM510:2 5
+VM510:2 100
+VM510:2 20
+VM510:2 200
+undefined
+function printIt(ele){
+    console.log(ele);
+}
+arr.forEach(printIt);
+VM731:2 100
+VM731:2 20
+VM731:2 90
+VM731:2 10
+VM731:2 5
+VM731:2 100
+VM731:2 20
+VM731:2 200
+undefined
+// Declarative Way
+arr.forEach((element,index)=>console.log(element, index));
+VM842:2 100 0
+VM842:2 20 1
+VM842:2 90 2
+VM842:2 10 3
+VM842:2 5 4
+VM842:2 100 5
+VM842:2 20 6
+VM842:2 200 7
+undefined
+// Declarative Way
+arr.forEach((element,index, a)=>console.log(element, index, arr));
+VM888:2 100 0 (8) [100, 20, 90, 10, 5, 100, 20, 200]
+VM888:2 20 1 (8) [100, 20, 90, 10, 5, 100, 20, 200]
+VM888:2 90 2 (8) [100, 20, 90, 10, 5, 100, 20, 200]
+VM888:2 10 3 (8) [100, 20, 90, 10, 5, 100, 20, 200]
+VM888:2 5 4 (8) [100, 20, 90, 10, 5, 100, 20, 200]
+VM888:2 100 5 (8) [100, 20, 90, 10, 5, 100, 20, 200]
+VM888:2 20 6 (8) [100, 20, 90, 10, 5, 100, 20, 200]
+VM888:2 200 7 (8) [100, 20, 90, 10, 5, 100, 20, 200]
+undefined

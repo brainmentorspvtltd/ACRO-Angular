@@ -1,0 +1,103 @@
+show();
+function show(){
+    console.log("I am the Show Fn ");
+}
+VM236:3 I am the Show Fn 
+undefined
+var disp = function(){
+    console.log("I am the Anonymous Fn ");
+}
+undefined
+disp();
+VM502:2 I am the Anonymous Fn 
+undefined
+output();
+var output = function(){
+    console.log("I am the Anonymous Fn ");
+}
+VM593:1 Uncaught TypeError: output is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM593:1
+function add(){
+    console.log("Addition ");
+}
+undefined
+function add(){
+    console.log("Customer Add ");
+}
+undefined
+function add(){
+    console.log("Order Add ");
+}
+undefined
+add();
+VM1060:2 Order Add 
+undefined
+function calc(){
+    let add = function(x,y){
+        return x+ y;
+    }
+    let sub = function(x,y){
+        return x - y;
+    }
+    return [add, sub];
+}
+undefined
+var z = calc();
+undefined
+z;
+(2) [ƒ, ƒ]0: ƒ (x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {constructor: ƒ}[[FunctionLocation]]: VM1460:2[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]1: ƒ (x,y)length: 2[[Prototype]]: Array(0)
+z[0];
+ƒ (x,y){
+        return x+ y;
+    }
+z[1];
+ƒ (x,y){
+        return x - y;
+    }
+z[0](10,20);
+30
+z[1](10,20);
+-10
+var t = function(){}
+undefined
+typeof t;
+'function'
+function calc(){
+    let add = function adder(x,y){
+        return x+ y;
+    }
+    let sub = function subtraction(x,y){
+        return x - y;
+    }
+    return [add, sub];
+}
+undefined
+var e = calc();
+undefined
+e;
+(2) [ƒ, ƒ]0: ƒ adder(x,y)1: ƒ subtraction(x,y)length: 2[[Prototype]]: Array(0)
+e[0](10,20);
+30
+e[1](10,20);
+-10
+function calc(){
+    let add = function (x,y){
+        return x+ y;
+    }
+    let sub = function (x,y){
+        return x - y;
+    }
+    return {add, sub};
+}
+undefined
+var r = calc();
+undefined
+r.add(10,20);
+30
+r.sub(100,200);
+-100
+r['add'](10,20);
+30
+r['sub'](1000,200);
+800
