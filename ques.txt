@@ -1,0 +1,37 @@
+Q1. Given is the Prices in the Array, we need to compute the GST and print the prices with GST and without GST
+Hint : GST is 18%
+
+
+Q2. Find the Element in an Array and find the occurance of find element.
+e.g var arr = [10,20,30,40,10,20,10,20];
+searchElement = 10
+Output : 3 Times
+
+Q3. Find the Element and Replace with Given Element
+e.g var arr = [10,20,30,100];
+searchElement = 20
+Replace with 2000
+Output : [10,2000, 30,1000];
+
+Q4. Copy the Array Element with out using Spread Operator.
+
+Q5. Given an Array and Find the Highest ELement in an Array.
+
+Q6. Given an Array and Find all the Greater Element by Comparing with the given Element
+e.g var arr = [900,10,20,30,40,50,100,200,300];
+search = 40
+Output [900, 50,100,200,300]
+
+Q7. Given is the Prices in the Array , along with Brand Name and Discount so we have 10 Records 
+a) Get the Total Prices and print it
+b) Get the Lowest Price and Print it.
+c) Sort the Array with Lowest to Higest Prices
+d) Sort the Array By Brand Wise in Z-A Order
+
+Q8. Given is the Array , Try to add an Element in Middle of the Array without creating a new array.
+
+Q9. Given are the prices in an array , we need to get the unique prices array. This array is a new array which contains only the unique elements.
+
+Q10. Find out how many ways you can delete the element from the Array
+
+Q11. Find the element from the array and delete the all occurances from the array. 
