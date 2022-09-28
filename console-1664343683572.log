@@ -1,0 +1,94 @@
+var prices = [1000,200,3000,4000,5000, 4444,5555];
+undefined
+var sum = 0;
+for(let i = 0; i<prices.length; i++){
+    sum = sum + prices[i];
+}
+console.log('Sum is ', sum);
+VM369:5 Sum is  23199
+undefined
+prices.reduce((sum , price)=>sum + price);
+23199
+prices.reduce((sum , price)=>{
+    console.log('Sum is ', sum , ' Price ' , price);
+    return sum + price;
+});
+VM875:2 Sum is  1000  Price  200
+VM875:2 Sum is  1200  Price  3000
+VM875:2 Sum is  4200  Price  4000
+VM875:2 Sum is  8200  Price  5000
+VM875:2 Sum is  13200  Price  4444
+VM875:2 Sum is  17644  Price  5555
+23199
+prices;
+(7) [1000, 200, 3000, 4000, 5000, 4444, 5555]
+prices.reduce((sum , price)=>{
+    console.log('Sum is ', sum , ' Price ' , price);
+    return sum + price;
+},0);
+VM922:2 Sum is  0  Price  1000
+VM922:2 Sum is  1000  Price  200
+VM922:2 Sum is  1200  Price  3000
+VM922:2 Sum is  4200  Price  4000
+VM922:2 Sum is  8200  Price  5000
+VM922:2 Sum is  13200  Price  4444
+VM922:2 Sum is  17644  Price  5555
+23199
+prices;
+(7) [1000, 200, 3000, 4000, 5000, 4444, 5555]
+prices.some(price=>price>2000);
+true
+prices.some(price=>price>5000);
+true
+prices.every(price=>price>5000);
+false
+prices.every(price=>price>50);
+true
+prices.every(price=>price>500);
+false
+prices;
+(7) [1000, 200, 3000, 4000, 5000, 4444, 5555]
+prices.push(10000);
+8
+prices;
+(8) [1000, 200, 3000, 4000, 5000, 4444, 5555, 10000]
+prices.pop();
+10000
+prices;
+(7) [1000, 200, 3000, 4000, 5000, 4444, 5555]
+prices.shift();
+1000
+prices;
+(6) [200, 3000, 4000, 5000, 4444, 5555]
+prices.unshift(11111);
+7
+prices;
+(7) [11111, 200, 3000, 4000, 5000, 4444, 5555]
+prices.splice(1);
+(6) [200, 3000, 4000, 5000, 4444, 5555]
+prices;
+[11111]
+var prices = [1000,200,3000,4000,5000, 4444,5555];
+undefined
+prices.splice(0);
+(7) [1000, 200, 3000, 4000, 5000, 4444, 5555]
+prices;
+[]
+var prices = [1000,200,3000,4000,5000, 4444,5555];
+undefined
+prices.splice(4,2);
+(2) [5000, 4444]
+prices;
+(5) [1000, 200, 3000, 4000, 5555]
+prices.splice(1,1);
+[200]
+prices;
+(4) [1000, 3000, 4000, 5555]
+prices.splice(2,1,8888);
+[4000]
+prices;
+(4) [1000, 3000, 8888, 5555]
+prices.splice(1,0,56566);
+[]
+prices;
+(5) [1000, 56566, 3000, 8888, 5555]

@@ -1,0 +1,20 @@
+var arr = [2,1,3,5,8,9];
+undefined
+arr.sort();
+(6) [1, 2, 3, 5, 8, 9]
+var arr = [2,1,3,5,8,9,21,10,1000,100,222];
+undefined
+arr.sort();
+(11) [1, 10, 100, 1000, 2, 21, 222, 3, 5, 8, 9]
+var product = {name:'Nike', price:2000, qty:10, rating:5, desc:'Nike Shoes', url :'http://www.abcd.com'};
+undefined
+var pricesArr = [{name:'Nike', price:2000, qty:10, rating:5, desc:'Nike Shoes', url :'http://www.abcd.com'}, {name:'Puma', price:1000, qty:20, rating:4, desc:'Puma Shoes', url :'http://www.xyz.com'},{name:'Adidas', price:3000, qty:10, rating:5, desc:'Adidas Shoes', url :'http://www.abcd.com'},{name:'Bata', price:1200, qty:10, rating:5, desc:'Bata Shoes', url :'http://www.abcd.com'}];
+undefined
+pricesArr;
+(4) [{…}, {…}, {…}, {…}]0: {name: 'Nike', price: 2000, qty: 10, rating: 5, desc: 'Nike Shoes', …}1: {name: 'Puma', price: 1000, qty: 20, rating: 4, desc: 'Puma Shoes', …}2: {name: 'Adidas', price: 3000, qty: 10, rating: 5, desc: 'Adidas Shoes', …}3: {name: 'Bata', price: 1200, qty: 10, rating: 5, desc: 'Bata Shoes', …}length: 4[[Prototype]]: Array(0)
+pricesArr.sort((first, second)=>first.price - second.price));
+VM837:1 Uncaught SyntaxError: Unexpected token ')'
+pricesArr.sort((first, second)=>first.price - second.price);
+(4) [{…}, {…}, {…}, {…}]0: {name: 'Puma', price: 1000, qty: 20, rating: 4, desc: 'Puma Shoes', …}1: {name: 'Bata', price: 1200, qty: 10, rating: 5, desc: 'Bata Shoes', …}2: {name: 'Nike', price: 2000, qty: 10, rating: 5, desc: 'Nike Shoes', …}3: {name: 'Adidas', price: 3000, qty: 10, rating: 5, desc: 'Adidas Shoes', …}length: 4[[Prototype]]: Array(0)
+pricesArr.sort((first, second)=>first.name.localeCompare(second.name));
+(4) [{…}, {…}, {…}, {…}]0: {name: 'Adidas', price: 3000, qty: 10, rating: 5, desc: 'Adidas Shoes', …}1: {name: 'Bata', price: 1200, qty: 10, rating: 5, desc: 'Bata Shoes', …}2: {name: 'Nike', price: 2000, qty: 10, rating: 5, desc: 'Nike Shoes', …}3: {name: 'Puma', price: 1000, qty: 20, rating: 4, desc: 'Puma Shoes', …}length: 4[[Prototype]]: Array(0)at: ƒ at()concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()findLast: ƒ findLast()findLastIndex: ƒ findLastIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {at: true, copyWithin: true, entries: true, fill: true, find: true, …}[[Prototype]]: Object
