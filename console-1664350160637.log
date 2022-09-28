@@ -1,0 +1,262 @@
+function init(){
+var count = 0; // Scope is Limited to init function
+var counter = function(){
+    
+    count++; // count = count + 1;
+    return count;
+}
+    return counter; // Fn Return Fn
+}
+
+undefined
+var c = init();
+undefined
+typeof c;
+'function'
+c;
+ƒ (){
+    
+    count++; // count = count + 1;
+    return count;
+}
+c();
+1
+c();
+2
+c();
+3
+c();
+4
+c();
+5
+c();
+6
+console.dir(c);
+VM424:1 ƒ counter()arguments: nullcaller: nulllength: 0name: "counter"prototype: {constructor: ƒ}[[FunctionLocation]]: VM286:3[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]0: Closure (init) {count: 6}1: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+function Math(x,y){
+    var z;
+    var add = function(a){
+        return a + x + y + z;
+    }
+     var sub = function(a){
+        return a - x - y - z;
+    }
+    return {add, sub};
+}
+undefined
+var obj = Math(10,20);
+undefined
+function Math(x,y){
+    var z =1;
+    var add = function(a){
+        return a + x + y + z;
+    }
+     var sub = function(a){
+        return a - x - y - z;
+    }
+    return {add, sub};
+}
+undefined
+var obj = Math(10,20);
+undefined
+obj.add(1);
+32
+t = 100;
+100
+window.t;
+100
+t++;
+100
+t;
+101
+function init(){
+var count = 0; // Scope is Limited to init function
+var counter = function(){
+    
+    count++; // count = count + 1;
+    return count;
+}
+    return counter; // Fn Return Fn
+}
+undefined
+var r = init();
+undefined
+r();
+1
+r();
+2
+r();
+3
+r = init();
+ƒ (){
+    
+    count++; // count = count + 1;
+    return count;
+}
+r();
+1
+r();
+2
+var fn = (function (){
+var count = 0; // Scope is Limited to init function
+var counter = function(){
+    
+    count++; // count = count + 1;
+    return count;
+}
+    return counter; // Fn Return Fn
+})();
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+fn();
+5
+function loop(){
+    console.log('Var Hositing ', i) ; // undefined
+    for(var i = 1; i<=10; i++){
+        console.log('Loop ',i);
+    }
+    console.log('Outside Loop ', i);
+}
+undefined
+loop();
+VM1723:2 Var Hositing  undefined
+VM1723:4 Loop  1
+VM1723:4 Loop  2
+VM1723:4 Loop  3
+VM1723:4 Loop  4
+VM1723:4 Loop  5
+VM1723:4 Loop  6
+VM1723:4 Loop  7
+VM1723:4 Loop  8
+VM1723:4 Loop  9
+VM1723:4 Loop  10
+VM1723:6 Outside Loop  11
+undefined
+function loop(){
+    console.log('Var Hositing ', i) ; // undefined
+    for(let i = 1; i<=10; i++){
+        console.log('Loop ',i);
+    }
+    console.log('Outside Loop ', i);
+}
+undefined
+loop();
+VM1759:2 Uncaught ReferenceError: i is not defined
+    at loop (<anonymous>:2:34)
+    at <anonymous>:1:1
+loop @ VM1759:2
+(anonymous) @ VM1781:1
+function loop(){
+    console.log('Var Hositing ', i) ; // undefined
+    (function(){
+    for(var i = 1; i<=10; i++){
+        console.log('Loop ',i);
+    }
+    })();
+    console.log('Outside Loop ', i);
+}
+undefined
+loop();
+VM1897:2 Uncaught ReferenceError: i is not defined
+    at loop (<anonymous>:2:34)
+    at <anonymous>:1:1
+loop @ VM1897:2
+(anonymous) @ VM1922:1
+function loop(){
+    //console.log('Var Hositing ', i) ; // undefined
+    (function(){
+    for(var i = 1; i<=10; i++){
+        console.log('Loop ',i);
+    }
+    })();
+    console.log('Outside Loop ', i);
+}
+undefined
+loop();
+VM1933:5 Loop  1
+VM1933:5 Loop  2
+VM1933:5 Loop  3
+VM1933:5 Loop  4
+VM1933:5 Loop  5
+VM1933:5 Loop  6
+VM1933:5 Loop  7
+VM1933:5 Loop  8
+VM1933:5 Loop  9
+VM1933:5 Loop  10
+VM1933:8 Uncaught ReferenceError: i is not defined
+    at loop (<anonymous>:8:34)
+    at <anonymous>:1:1
+loop @ VM1933:8
+(anonymous) @ VM1956:1
+function loop(){
+    //console.log('Var Hositing ', i) ; // undefined
+    (function(){
+    for(var i = 1; i<=10; i++){
+        console.log('Loop ',i);
+    }
+    })();
+   // console.log('Outside Loop ', i);
+}
+undefined
+loop();
+VM1967:5 Loop  1
+VM1967:5 Loop  2
+VM1967:5 Loop  3
+VM1967:5 Loop  4
+VM1967:5 Loop  5
+VM1967:5 Loop  6
+VM1967:5 Loop  7
+VM1967:5 Loop  8
+VM1967:5 Loop  9
+VM1967:5 Loop  10
+undefined
+function doBiggerTask(){
+    for(let i = 1; i<=100000; i++){
+        for(let j=1; j<=200000; j++){}
+    }
+    return "Bigger Task Over ";
+}
+undefined
+console.log("Before Calling Bigger Task ");
+console.log(doBiggerTask());
+console.log("After Calling Bigger Task ");
+VM2761:1 Before Calling Bigger Task 
+VM2761:2 Bigger Task Over 
+VM2761:3 After Calling Bigger Task 
+undefined
+var cache = {};
+function doBiggerTask(num){
+    if(cache[num]){ // Truthy 
+        return cache[num];
+    }
+    for(let i = 1; i<=100000; i++){
+        for(let j=1; j<=200000; j++){}
+    }
+    cache[num] = num**3; // Cached 
+    return cache [num];
+}
+undefined
+doBiggerTask(3);
+27
+doBiggerTask(3);
+27
+doBiggerTask(3);
+27
+doBiggerTask(3);
+27
+doBiggerTask(5);
+125
+doBiggerTask(5);
+125
+doBiggerTask(5);
+125
+doBiggerTask(3);
+27

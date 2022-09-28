@@ -1,0 +1,82 @@
+var arr = [10,20,30,40,10,20,10,20];
+undefined
+var searchElement = 10;
+undefined
+arr.filter(ele=>ele===10).length;
+3
+arr.reduce((subArray, ele)=>{
+    if(ele===searchElement){
+        subArray.push(ele);
+    }
+    return subArray;
+}, []).length;
+3
+arr;
+(8) [10, 20, 30, 40, 10, 20, 10, 20]
+var arr2 = arr.map(e=>e);
+undefined
+arr2;
+(8) [10, 20, 30, 40, 10, 20, 10, 20]
+arr === arr2;
+false
+arr[0] = 555;
+555
+arr;
+(8) [555, 20, 30, 40, 10, 20, 10, 20]
+arr2;
+(8) [10, 20, 30, 40, 10, 20, 10, 20]
+var arr3 = arr.filter(e=>true);
+undefined
+arr3;
+(8) [555, 20, 30, 40, 10, 20, 10, 20]
+arr3 === arr;
+false
+arr.reduce((cloneArr, ele)=>{
+    cloneArr.push(ele);
+    return cloneArr;
+},[]);
+(8) [555, 20, 30, 40, 10, 20, 10, 20]
+var arr4 = arr.reduce((cloneArr, ele)=>{
+    cloneArr.push(ele);
+    return cloneArr;
+},[]);
+undefined
+arr4 === arr;
+false
+var arr = [10,20,30,40,10,20,10,20];
+undefined
+arr.reduce((max, ele)=>{
+    if(ele>max){
+        max = ele;
+    }
+    return max;
+});
+40
+arr;
+(8) [10, 20, 30, 40, 10, 20, 10, 20]
+arr.length=0
+0
+arr;
+[]
+var arr = [10,20,30,40,10,20,10,20];
+undefined
+arr.length= arr.length - 3;
+5
+arr;
+(5) [10, 20, 30, 40, 10]
+var arr = [10,20,30,40,10,20,10,20];
+undefined
+arr.length;
+8
+arr.splice(1,1);
+[20]
+arr.pop();
+20
+arr.shift();
+10
+arr;
+(5) [30, 40, 10, 20, 10]
+arr = arr.filter(e=>!(e===10))
+(3) [30, 40, 20]
+arr;
+(3) [30, 40, 20]
