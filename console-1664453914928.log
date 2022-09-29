@@ -1,0 +1,32 @@
+var obj= {id:1001, name:'ram'}; // Object Literal
+undefined
+typeof obj;
+'object'
+obj instanceof Object;
+true
+function show(){
+    console.log("I am the Show Fn ");
+}
+undefined
+typeof show;
+'function'
+show.prototype;
+{constructor: ƒ}
+typeof show.prototype;
+'object'
+function Employee(id, name, salary){
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+}
+undefined
+var ram = new Employee(1001, "Ram", 9999);
+undefined
+ram;
+Employee {id: 1001, name: 'Ram', salary: 9999}id: 1001name: "Ram"salary: 9999[[Prototype]]: Object
+ram.__proto__;
+{constructor: ƒ}constructor: ƒ Employee(id, name, salary)[[Prototype]]: Object
+Employee.prototype;
+{constructor: ƒ}constructor: ƒ Employee(id, name, salary)[[Prototype]]: Object
+ram.__proto__ === Employee.prototype;
+true

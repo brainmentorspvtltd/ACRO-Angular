@@ -1,0 +1,36 @@
+function show(){
+    console.log("I am the Show ");
+}
+undefined
+window.show;
+ƒ show(){
+    console.log("I am the Show ");
+}
+window.show();
+VM157:2 I am the Show 
+undefined
+show(); // window.show();
+VM157:2 I am the Show 
+undefined
+var obj = {
+    x:10, 
+    y:20,
+    // disp:function(){}
+    disp(){ // Object ShortHand ES6
+        let z = this.x + this.y; // this refer in this case obj.
+        return z;
+    }
+}
+undefined
+obj.disp();
+30
+function Product(id, name, price){
+    this.id = id;
+    this.name = name;
+    this.price = price;
+}
+undefined
+var p = new Product(1001, "Ram", 9999);
+undefined
+p;
+Product {id: 1001, name: 'Ram', price: 9999}

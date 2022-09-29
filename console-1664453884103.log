@@ -1,0 +1,89 @@
+function whoAmI(){
+    console.log('Name ', this.name, 'City ',this.city);
+}
+undefined
+var name = 'Ram Kumar';
+undefined
+var city = 'Delhi';
+undefined
+window.name;
+'Ram Kumar'
+window.city;
+'Delhi'
+whoAmI(); // window.whoAmI()
+VM292:2 Name  Ram Kumar City  Delhi
+undefined
+window.whoAmI(); 
+VM292:2 Name  Ram Kumar City  Delhi
+undefined
+var obj = {
+    name:'Shyam kumar',
+    city:'Mumbai',
+    whoAMI(){
+        console.log('Name ', this.name);
+        console.log('City ', this.city);
+    }
+}
+undefined
+obj.whoAMI();
+VM1044:5 Name  Shyam kumar
+VM1044:6 City  Mumbai
+undefined
+var person = {name:'Amit Srivastava', city:'New Delhi'};
+undefined
+whoAmI
+ƒ whoAmI(){
+    console.log('Name ', this.name, 'City ',this.city);
+}
+whoAmI(); // window.whoAmI()
+VM292:2 Name  Ram Kumar City  Delhi
+undefined
+window.name;
+'Ram Kumar'
+window.city;
+'Delhi'
+window.whoAmI.call(person);
+VM292:2 Name  Amit Srivastava City  New Delhi
+undefined
+window.whoAmI.apply(person);
+VM292:2 Name  Amit Srivastava City  New Delhi
+undefined
+function whoAmI(age, country){
+    console.log('Name ', this.name, 'City ',this.city, 'Age ' ,age, 'Country ', country);
+}
+undefined
+whoAmI.call(person,21, 'India'); 
+VM1653:2 Name  Amit Srivastava City  New Delhi Age  21 Country  India
+undefined
+whoAmI.apply(person,[21, 'India']); 
+VM1653:2 Name  Amit Srivastava City  New Delhi Age  21 Country  India
+undefined
+whoAmI.call(person,21, 'India'); 
+VM1653:2 Name  Amit Srivastava City  New Delhi Age  21 Country  India
+undefined
+var customer = {name:'Ramesh' , city:'Mumbai', country:'India', age:33}
+undefined
+whoAmI.call(customer,33, 'India');
+VM1653:2 Name  Ramesh City  Mumbai Age  33 Country  India
+undefined
+var fn = whoAmI.bind(person);
+undefined
+fn;
+ƒ whoAmI(age, country){
+    console.log('Name ', this.name, 'City ',this.city, 'Age ' ,age, 'Country ', country);
+}
+whoAmI(); // window.whoAmI()
+VM1653:2 Name  Ram Kumar City  Delhi Age  undefined Country  undefined
+undefined
+whoAmI.call(person,21, 'India'); 
+VM1653:2 Name  Amit Srivastava City  New Delhi Age  21 Country  India
+undefined
+fn(22, 'India');
+VM1653:2 Name  Amit Srivastava City  New Delhi Age  22 Country  India
+undefined
+fn(23, 'India');
+VM1653:2 Name  Amit Srivastava City  New Delhi Age  23 Country  India
+undefined
+fn(24, 'India');
+VM1653:2 Name  Amit Srivastava City  New Delhi Age  24 Country  India
+undefined

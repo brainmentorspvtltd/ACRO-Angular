@@ -1,0 +1,59 @@
+function Student(rollno, name, totalMarks){
+    // this is for every object
+    // this values copy to the every object
+    this.rollno = rollno;
+    this.name=name;
+    this.totalMarks = totalMarks;
+}
+Student.prototype.print = function(){
+    console.log(`Rollno ${this.rollno} Name ${this.name} Total Marks ${this.totalMarks}`);
+}
+ƒ (){
+    console.log(`Rollno ${this.rollno} Name ${this.name} Total Marks ${this.totalMarks}`);
+}
+Student.prototype;
+{print: ƒ, constructor: ƒ}
+var ram = new Student(1001, "Ram", 100);
+undefined
+var ramesh = new Student(1002, "Ramesh",90);
+undefined
+ram;
+Student {rollno: 1001, name: 'Ram', totalMarks: 100}name: "Ram"rollno: 1001totalMarks: 100[[Prototype]]: Object
+ramesh;
+Student {rollno: 1002, name: 'Ramesh', totalMarks: 90}
+ram.id;
+undefined
+ram.rollno;
+1001
+ram;
+Student {rollno: 1001, name: 'Ram', totalMarks: 100}name: "Ram"rollno: 1001totalMarks: 100[[Prototype]]: Objectprint: ƒ ()constructor: ƒ Student(rollno, name, totalMarks)[[Prototype]]: Object
+ram.print();
+VM813:9 Rollno 1001 Name Ram Total Marks 100
+undefined
+ram.__proto__.prototype;
+undefined
+ram.__proto__;
+{print: ƒ, constructor: ƒ}
+ram.__proto__.print;
+ƒ (){
+    console.log(`Rollno ${this.rollno} Name ${this.name} Total Marks ${this.totalMarks}`);
+}
+ram.print();
+VM813:9 Rollno 1001 Name Ram Total Marks 100
+undefined
+ram.__proto__.print();
+VM813:9 Rollno undefined Name undefined Total Marks undefined
+undefined
+ram;
+Student {rollno: 1001, name: 'Ram', totalMarks: 100}name: "Ram"rollno: 1001totalMarks: 100[[Prototype]]: Objectprint: ƒ ()constructor: ƒ Student(rollno, name, totalMarks)[[Prototype]]: Object
+ram.__proto__ === Student.prototype;
+true
+ram.__proto__ === ramesh.__proto__;
+true
+ram;
+Student {rollno: 1001, name: 'Ram', totalMarks: 100}
+ram.__proto__
+{print: ƒ, constructor: ƒ}
+ram.print();
+VM813:9 Rollno 1001 Name Ram Total Marks 100
+undefined

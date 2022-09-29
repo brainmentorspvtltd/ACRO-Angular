@@ -1,0 +1,117 @@
+var obj = {id:1001, name:'Amit'};
+undefined
+typeof obj;
+'object'
+obj instanceof Object;
+true
+typeof Object;
+'function'
+function createCustomer(){
+    var customer = {};
+    customer.id = 1001;
+    customer.name = 
+}
+VM401:5 Uncaught SyntaxError: Unexpected token '}'
+function createCustomer(){
+    var customer = {}; // Object Literal
+    customer.id = 1001;
+    customer.name = 'Amit';
+    customer.balance = 9909;
+    return customer;
+}
+
+undefined
+var amit = createCustomer();
+undefined
+amit;
+{id: 1001, name: 'Amit', balance: 9909}
+amit.id;
+1001
+function createCustomer(id, name, balance){
+    var customer = {}; // Object Literal
+    customer.id = id;
+    customer.name = name;
+    customer.balance = balance;
+    return customer;
+}
+
+undefined
+var ram = createCustomer(101, 'Ram', 9999);
+undefined
+ram;
+{id: 101, name: 'Ram', balance: 9999}
+var ram = createCustomer(102, 'Ramesh', 19999);
+undefined
+var ramesh = createCustomer(102, 'Ramesh', 19999);
+undefined
+ramesh;
+{id: 102, name: 'Ramesh', balance: 19999}
+ramesh instanceof Object;
+true
+obj instanceof Object;
+true
+var tim = createCustomer(103, 'tim', 19999);
+undefined
+ramesh;
+{id: 102, name: 'Ramesh', balance: 19999}
+tim;
+{id: 103, name: 'tim', balance: 19999}
+obj instanceof Object;
+true
+tim instanceof Object;
+true
+tim instanceof createCustomer;
+false
+function Customer(id, name, balance){
+       // this is a keyword , which hold the current calling object reference
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+    
+}
+var amit = new Customer(1001, "Amit", 9999);
+
+undefined
+amit;
+Customer {id: 1001, name: 'Amit', balance: 9999}
+amit instanceof Customer;
+true
+amit instanceof Object;
+true
+amit;
+Customer {id: 1001, name: 'Amit', balance: 9999}
+ramesh;
+{id: 102, name: 'Ramesh', balance: 19999}
+function Customer(id, name, balance){
+       // this is a keyword , which hold the current calling object reference
+    this.id = id;
+    this.name = name;
+    this.balance = balance;
+    this.print = function(){
+        console.log(`Id ${this.id} Name ${this.name} Balance ${this.balance}`);
+    }
+    
+}
+var amit = new Customer(1001, "Amit", 9999);
+
+undefined
+amit;
+Customer {id: 1001, name: 'Amit', balance: 9999, print: ƒ}
+amit.print();
+VM2263:7 Id 1001 Name Amit Balance 9999
+undefined
+var ram = new Customer(1002, "Ram", 8888);
+undefined
+ram;
+Customer {id: 1002, name: 'Ram', balance: 8888, print: ƒ}
+console.dir(Customer);
+VM2500:1 ƒ Customer(id, name, balance)arguments: nullcaller: nulllength: 3name: "Customer"prototype: {constructor: ƒ}[[FunctionLocation]]: VM2263:1[[Prototype]]: ƒ ()[[Scopes]]: Scopes[1]
+undefined
+Customer.prototype;
+{constructor: ƒ}
+typeof Customer.prototype;
+'object'
+ Customer.prototype instanceof Object;
+true
+ram;
+Customer {id: 1002, name: 'Ram', balance: 8888, print: ƒ}balance: 8888id: 1002name: "Ram"print: ƒ ()[[Prototype]]: Objectconstructor: ƒ Customer(id, name, balance)[[Prototype]]: Object

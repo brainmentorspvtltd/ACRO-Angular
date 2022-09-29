@@ -1,0 +1,38 @@
+var cache = {};
+function doBiggerTask(num){
+    if(cache[num]){ // Truthy 
+        return cache[num];
+    }
+    for(let i = 1; i<=100000; i++){
+        for(let j=1; j<=200000; j++){}
+    }
+    cache[num] = num**3; // Cached 
+    return cache [num];
+}
+undefined
+function init(){
+var count = 0; // Scope is Limited to init function
+var counter = function(){
+    
+    count++; // count = count + 1;
+    return count;
+}
+    return counter; // Fn Return  + Lexical Scope 
+}
+undefined
+var e = init();
+undefined
+console.dir(e);
+VM449:1 ƒ counter()arguments: nullcaller: nulllength: 0name: "counter"prototype: {constructor: ƒ}[[FunctionLocation]]: VM378:3[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]0: Closure (init) {count: 0}1: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
+e();
+1
+e();
+2
+e();
+3
+e();
+4
+console.dir(e);
+VM481:1 ƒ counter()arguments: nullcaller: nulllength: 0name: "counter"prototype: {constructor: ƒ}[[FunctionLocation]]: VM378:3[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]0: Closure (init) {count: 4}1: Global {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined

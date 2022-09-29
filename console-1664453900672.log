@@ -1,0 +1,56 @@
+function Employee(id, name , salary){
+    this.id = id;
+    this.name = name;
+    this.salary = salary;
+}
+Employee.prototype.hra = function(){
+    return this.salary * 0.30;
+}
+Employee.prototype.da = function(){
+    return this.salary * 0.10;
+}
+Employee.prototype.ta = function(){
+    return this.salary * 0.20;
+}
+Employee.prototype.gs = function(){
+    return this.salary + this.hra() + this.da() + this.ta();
+}
+Employee.prototype.tax = function(){
+   return this.gs() * 0.10;
+}
+Employee.prototype.ns = function(){
+    return this.gs() - this.tax();
+}
+Employee.prototype.print = function(){
+    console.log('Id ', this.id);
+     console.log('Name ', this.name);
+     console.log('Basic Salary ', this.salary);
+     console.log('HRA ', this.hra());
+     console.log('DA ', this.da());
+     console.log('TA ', this.ta());
+     console.log('GS ', this.gs());
+     console.log('TAX ', this.tax());
+     console.log('NS ', this.ns());
+}
+ƒ (){
+    console.log('Id ', this.id);
+     console.log('Name ', this.name);
+     console.log('Basic Salary ', this.salary);
+     console.log('HRA ', this.hra());
+     console.log('DA ', this.da());
+  …
+var ram = new Employee(1001, "Ram Kumar", 10000);
+undefined
+ram.print();
+VM1477:25 Id  1001
+VM1477:26 Name  Ram Kumar
+VM1477:27 Basic Salary  10000
+VM1477:28 HRA  3000
+VM1477:29 DA  1000
+VM1477:30 TA  2000
+VM1477:31 GS  16000
+VM1477:32 TAX  1600
+VM1477:33 NS  14400
+undefined
+ram;
+Employee {id: 1001, name: 'Ram Kumar', salary: 10000}id: 1001name: "Ram Kumar"salary: 10000[[Prototype]]: Objectda: ƒ ()gs: ƒ ()hra: ƒ ()ns: ƒ ()print: ƒ ()ta: ƒ ()tax: ƒ ()constructor: ƒ Employee(id, name , salary)[[Prototype]]: Object

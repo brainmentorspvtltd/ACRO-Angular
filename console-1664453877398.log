@@ -1,0 +1,401 @@
+function Person(name, age, phone){
+    this.name = name;
+    this.age = age;
+    this.phone = phone;
+}
+Person.prototype.printPerson = function(){
+    console.log('Personal Info ');
+    console.log('Name ',this.name);
+    console.log('Age ', this.age);
+    console.log('Phone ', this.phone);
+}
+//var ram = new Person('Amit', 21, 2222);
+// Function Constructor - Intialize Members
+function Employee(id, salary, bonus, name, age, phone){
+    // this - It belongs to Employee object
+    Person.call(this, name, age, phone); // super call
+    this.id = id;
+    this.salary = salary;
+    this.bonus = bonus;
+}
+Employee.prototype.print = function(){
+    this.printPerson();
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+var emp = new Employee(1001, 90000, 9000,'Ram', 21, 2222);
+ƒ (){
+    this.printPerson();
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+Employee.prototype.__proto__ === Person.prototype;
+false
+Employee.prototype.__proto__ === Object.prototype;
+true
+Employee.prototype.__proto__ = Person.prototype;
+{printPerson: ƒ, constructor: ƒ}
+Employee.prototype.__proto__ === Person.prototype;
+true
+var emp = new Employee(1001, 90000, 9000,'Ram', 21, 2222);
+undefined
+emp;
+Employee {name: 'Ram', age: 21, phone: 2222, id: 1001, salary: 90000, …}age: 21bonus: 9000id: 1001name: "Ram"phone: 2222salary: 90000[[Prototype]]: Personprint: ƒ ()constructor: ƒ Employee(id, salary, bonus, name, age, phone)[[Prototype]]: ObjectprintPerson: ƒ ()constructor: ƒ Person(name, age, phone)[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+emp.print();
+VM2164:7 Personal Info 
+VM2164:8 Name  Ram
+VM2164:9 Age  21
+VM2164:10 Phone  2222
+VM2164:23 Employee Info 
+VM2164:24 Id  1001
+VM2164:25 Salary  90000
+VM2164:26 Bonus  9000
+undefined
+emp;
+Employee {name: 'Ram', age: 21, phone: 2222, id: 1001, salary: 90000, …}
+emp.__proto__ === Employee.prototype;
+true
+emp.__proto__.__proto__ === Person.prototype;
+true
+emp.__proto__.__proto__.__proto__ === Object.prototype;
+true
+emp.__proto__.__proto__.__proto__.__proto__;
+null
+function Person(name, age, phone){
+    this.name = name;
+    this.age = age;
+    this.phone = phone;
+}
+Person.prototype.print = function(){
+    console.log('Personal Info ');
+    console.log('Name ',this.name);
+    console.log('Age ', this.age);
+    console.log('Phone ', this.phone);
+}
+//var ram = new Person('Amit', 21, 2222);
+// Function Constructor - Intialize Members
+function Employee(id, salary, bonus, name, age, phone){
+    // this - It belongs to Employee object
+    Person.call(this, name, age, phone); // super call
+    this.id = id;
+    this.salary = salary;
+    this.bonus = bonus;
+}
+Employee.prototype.print = function(){
+    this.print();
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+var emp = new Employee(1001, 90000, 9000,'Ram', 21, 2222);
+ƒ (){
+    this.print();
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+emp.print();
+VM2829:22 Uncaught RangeError: Maximum call stack size exceeded
+    at Employee.print (<anonymous>:22:10)
+    at Employee.print (<anonymous>:22:10)
+    at Employee.print (<anonymous>:22:10)
+    at Employee.print (<anonymous>:22:10)
+    at Employee.print (<anonymous>:22:10)
+    at Employee.print (<anonymous>:22:10)
+    at Employee.print (<anonymous>:22:10)
+    at Employee.print (<anonymous>:22:10)
+    at Employee.print (<anonymous>:22:10)
+    at Employee.print (<anonymous>:22:10)
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Employee.print @ VM2829:22
+Show 170 more frames
+function Person(name, age, phone){
+    this.name = name;
+    this.age = age;
+    this.phone = phone;
+}
+Person.prototype.print = function(){
+    console.log('Personal Info ');
+    console.log('Name ',this.name);
+    console.log('Age ', this.age);
+    console.log('Phone ', this.phone);
+}
+//var ram = new Person('Amit', 21, 2222);
+// Function Constructor - Intialize Members
+function Employee(id, salary, bonus, name, age, phone){
+    // this - It belongs to Employee object
+    Person.call(this, name, age, phone); // super call
+    this.id = id;
+    this.salary = salary;
+    this.bonus = bonus;
+}
+Employee.prototype.print = function(){
+    Person.print.call(this);
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+var emp = new Employee(1001, 90000, 9000,'Ram', 21, 2222);
+ƒ (){
+    Person.print.call(this);
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+emp.print();
+VM2946:22 Uncaught TypeError: Cannot read properties of undefined (reading 'call')
+    at Employee.print (<anonymous>:22:18)
+    at <anonymous>:1:5
+Employee.print @ VM2946:22
+(anonymous) @ VM2952:1
+function Person(name, age, phone){
+    this.name = name;
+    this.age = age;
+    this.phone = phone;
+}
+Person.prototype.print = function(){
+    console.log('Personal Info ');
+    console.log('Name ',this.name);
+    console.log('Age ', this.age);
+    console.log('Phone ', this.phone);
+}
+//var ram = new Person('Amit', 21, 2222);
+// Function Constructor - Intialize Members
+function Employee(id, salary, bonus, name, age, phone){
+    // this - It belongs to Employee object
+    Person.call(this, name, age, phone); // super call
+    this.id = id;
+    this.salary = salary;
+    this.bonus = bonus;
+}
+Employee.prototype.print = function(){
+    Person.prototype.print.call(this);
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+var emp = new Employee(1001, 90000, 9000,'Ram', 21, 2222);
+ƒ (){
+    Person.prototype.print.call(this);
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+emp.print();
+VM3007:7 Personal Info 
+VM3007:8 Name  Ram
+VM3007:9 Age  21
+VM3007:10 Phone  2222
+VM3007:23 Employee Info 
+VM3007:24 Id  1001
+VM3007:25 Salary  90000
+VM3007:26 Bonus  9000
+undefined
