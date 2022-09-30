@@ -1,0 +1,40 @@
+var arr = [10,20,30,40,40,50];
+undefined
+arr.splice(1, 0, 9999);
+[]
+arr;
+(7) [10, 9999, 20, 30, 40, 40, 50]
+arr.push(888);
+8
+arr.unshift(10000);
+9
+arr;
+(9) [10000, 10, 9999, 20, 30, 40, 40, 50, 888]
+Array.prototype.insert = function(index, value){
+    this.splice(index, 0,value);
+    return this.length;
+}
+ƒ (index, value){
+    this.splice(index, 0,value);
+    return this.length;
+}
+arr;
+(9) [10000, 10, 9999, 20, 30, 40, 40, 50, 888]
+arr.insert(2,81111);
+10
+arr;
+(10) [10000, 10, 81111, 9999, 20, 30, 40, 40, 50, 888]
+arr.replace;
+undefined
+Array.prototype.replace = function(index, value){
+    this.splice(index,1,value);
+    return this;
+}
+ƒ (index, value){
+    this.splice(index,1,value);
+    return this;
+}
+arr;
+(10) [10000, 10, 81111, 9999, 20, 30, 40, 40, 50, 888]
+arr.replace(4,2000);
+(10) [10000, 10, 81111, 9999, 2000, 30, 40, 40, 50, 888]

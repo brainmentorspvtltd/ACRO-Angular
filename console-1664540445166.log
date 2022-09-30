@@ -1,0 +1,84 @@
+function getWeatherData(result){
+    console.log('Weather Data is ', result);
+}
+const temp = {'delhi':22, 'mumbai':28};
+function weatherData(callBackFn, city){
+    setTimeout(()=>{
+        getWeatherData(temp[city]);
+    }, 3000);
+}
+
+undefined
+weatherData(getWeatherData,'delhi');
+undefined
+VM604:2 Weather Data is  22
+weatherData(getWeatherData,'mumbai');
+undefined
+VM604:2 Weather Data is  28
+weatherData(getWeatherData,'chandigarh');
+undefined
+VM604:2 Weather Data is  undefined
+function showScore(result){
+    console.log('Score is ',result);
+}
+let matchScore = 0;
+let time ;
+function liveScore(callBackFn){
+    time = setInterval(()=>{
+        matchScore+=10;
+        callBackFn(matchScore);
+        
+    },2000);
+}
+undefined
+liveScore(showScore);
+undefined
+VM1300:2 Score is  10
+VM1300:2 Score is  20
+VM1300:2 Score is  30
+VM1300:2 Score is  40
+VM1300:2 Score is  50
+VM1300:2 Score is  60
+VM1300:2 Score is  70
+VM1300:2 Score is  80
+VM1300:2 Score is  90
+VM1300:2 Score is  100
+VM1300:2 Score is  110
+VM1300:2 Score is  120
+VM1300:2 Score is  130
+VM1300:2 Score is  140
+clearInterval(time);
+undefined
+function showScore(result){
+    console.log('Score is ',result);
+}
+function showError(err){
+    console.log('Error During Score  ',err);
+}
+let matchScore = 0;
+let time ;
+function liveScore(successCallBack, errorCallBack){
+    time = setInterval(()=>{
+        matchScore+=10;
+        if(matchScore>=100){
+        errorCallBack("Some Problem Occur ");
+            clearInterval(time);
+        };
+        successCallBack(matchScore);
+        
+    },2000);
+}
+undefined
+liveScore(showScore, showError);
+undefined
+VM1777:2 Score is  10
+VM1777:2 Score is  20
+VM1777:2 Score is  30
+VM1777:2 Score is  40
+VM1777:2 Score is  50
+VM1777:2 Score is  60
+VM1777:2 Score is  70
+VM1777:2 Score is  80
+VM1777:2 Score is  90
+VM1777:5 Error During Score   Some Problem Occur 
+VM1777:2 Score is  100

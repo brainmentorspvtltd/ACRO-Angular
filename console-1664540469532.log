@@ -1,0 +1,45 @@
+function Person(name, age, phone){
+    this.name = name;
+    this.age = age;
+    this.phone = phone;
+}
+Person.prototype.print = function(){
+    console.log('Personal Info ');
+    console.log('Name ',this.name);
+    console.log('Age ', this.age);
+    console.log('Phone ', this.phone);
+}
+//var ram = new Person('Amit', 21, 2222);
+// Function Constructor - Intialize Members
+function Employee(id, salary, bonus, name, age, phone){
+    // this - It belongs to Employee object
+    Person.call(this, name, age, phone); // super call
+    this.id = id;
+    this.salary = salary;
+    this.bonus = bonus;
+}
+Employee.prototype.print = function(){
+    Person.prototype.print.call(this);
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+var emp = new Employee(1001, 90000, 9000,'Ram', 21, 2222);
+ƒ (){
+    Person.prototype.print.call(this);
+    console.log('Employee Info ');
+    console.log('Id ',this.id);
+    console.log('Salary ', this.salary);
+    console.log('Bonus ', this.bonus);
+}
+emp.print();
+VM21:7 Personal Info 
+VM21:8 Name  Ram
+VM21:9 Age  21
+VM21:10 Phone  2222
+VM21:23 Employee Info 
+VM21:24 Id  1001
+VM21:25 Salary  90000
+VM21:26 Bonus  9000
+undefined

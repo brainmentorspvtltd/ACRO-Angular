@@ -1,0 +1,80 @@
+class A{}
+undefined
+typeof A;
+'function'
+A.prototype;
+{constructor: ƒ}
+class Person{
+    constructor(name, age, phone){
+         this.name = name;
+        this.age = age;
+        this.phone = phone;
+    }
+    print(){
+        console.log('Person ', this.name, this.age, this.phone);
+    }
+}
+class Employee extends Person{
+    constructor(salary, id, bonus, name, age, phone){
+        super(name, age, phone); // Calling Parent class Constructor (Constructor Chaining)
+        this.salary = salary;
+        this.id = id;
+        this.bonus = bonus;
+    }
+    print(){
+            super.print();
+        console.log('Emp ', this.salary, this.bonus , this.id ); 
+    }
+}
+var emp = new Employee(90000, 101, 9000, 'Tim', 21, 2222);
+undefined
+emp.print();
+VM1699:8 Person  Tim 21 2222
+VM1699:20 Emp  90000 9000 101
+undefined
+emp;
+Employee {name: 'Tim', age: 21, phone: 2222, salary: 90000, id: 101, …}age: 21bonus: 9000id: 101name: "Tim"phone: 2222salary: 90000[[Prototype]]: Personconstructor: class Employeeprint: ƒ print()[[Prototype]]: Objectconstructor: class Personprint: ƒ print()[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+class B{
+    static disp(){
+        console.log('I am the Static Disp ');
+    }
+    print(){
+        console.log('I am the Print Fn ');
+    }
+}
+undefined
+B.prototype.print;
+ƒ print(){
+        console.log('I am the Print Fn ');
+    }
+B.prototype.disp;
+undefined
+B.disp;
+ƒ disp(){
+        console.log('I am the Static Disp ');
+    }
+B.print;
+undefined
+B.disp();
+VM2205:3 I am the Static Disp 
+undefined
+typeof B;
+'function'
+function Customer(){
+    console.log("i am the Customer ");
+}
+undefined
+typeof Customer;
+'function'
+Customer.show = function(){
+    console.log("i am the Show ");
+}
+ƒ (){
+    console.log("i am the Show ");
+}
+Customer.show();
+VM2793:2 i am the Show 
+undefined
+B.disp();
+VM2205:3 I am the Static Disp 
+undefined
