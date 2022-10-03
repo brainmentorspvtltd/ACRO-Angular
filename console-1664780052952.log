@@ -1,0 +1,217 @@
+function doWork(num){
+    var promise = new Promise((resolve, reject)=>{
+             // Async Code
+        setTimeout(()=>{
+            if(num>10){
+                reject("Can't Compute Cube >10");
+                
+            }
+            resolve(num**3);
+        }, 5000);
+    });
+    return promise;
+   
+}
+undefined
+var pr = doWork(3);
+undefined
+pr;
+Promise {<pending>}
+pr;
+Promise {<fulfilled>: 27}
+var pr = doWork(30);
+undefined
+VM610:6 Uncaught (in promise) Can't Compute Cube >10
+(anonymous) @ VM610:6
+setTimeout (async)
+(anonymous) @ VM610:4
+doWork @ VM610:2
+(anonymous) @ VM695:1
+pr;
+Promise {<rejected>: "Can't Compute Cube >10"}
+var pr = doWork(30);
+undefined
+pr;
+Promise {<pending>}
+VM610:6 Uncaught (in promise) Can't Compute Cube >10
+(anonymous) @ VM610:6
+setTimeout (async)
+(anonymous) @ VM610:4
+doWork @ VM610:2
+(anonymous) @ VM715:1
+pr;
+Promise {<rejected>: "Can't Compute Cube >10"}
+var pr = doWork(30);
+pr.then(data=>console.log('Data ',data)) // Resolve
+    .catch(err=>console.log('Error ',err)); // Reject
+Promise {<pending>}
+VM1195:3 Error  Can't Compute Cube >10
+var pr = doWork(5);
+pr.then(data=>console.log('Data ',data)) // Resolve
+    .catch(err=>console.log('Error ',err)); // Reject
+Promise {<pending>}
+VM1212:2 Data  125
+var singlePromise = Promise.all([doWork(2), doWork(3), doWork(5)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM1743:2 (3) [8, 27, 125]
+var singlePromise = Promise.all([doWork(2), doWork(300), doWork(5)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM1758:2 Can't Compute Cube >10
+var singlePromise = Promise.all([doWork(2), doWork(300), doWork(500)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM1772:2 Can't Compute Cube >10
+function doWork(num){
+    var promise = new Promise((resolve, reject)=>{
+             // Async Code
+        setTimeout(()=>{
+            if(num>10){
+                reject("Can't Compute Cube >10 and Ur Value is "+Number);
+                
+            }
+            resolve(num**3);
+        }, 5000);
+    });
+    return promise;
+   
+}
+undefined
+function doWork(num){
+    var promise = new Promise((resolve, reject)=>{
+             // Async Code
+        setTimeout(()=>{
+            if(num>10){
+                reject("Can't Compute Cube >10 and Ur Value is "+num);
+                
+            }
+            resolve(num**3);
+        }, 5000);
+    });
+    return promise;
+   
+}
+undefined
+var singlePromise = Promise.all([doWork(2), doWork(300), doWork(500)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM1898:2 Can't Compute Cube >10 and Ur Value is 300
+var singlePromise = Promise.allSettled([doWork(2), doWork(300), doWork(500)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM1941:2 (3) [{…}, {…}, {…}]0: {status: 'fulfilled', value: 8}1: reason: "Can't Compute Cube >10 and Ur Value is 300"status: "rejected"[[Prototype]]: Object2: reason: "Can't Compute Cube >10 and Ur Value is 500"status: "rejected"[[Prototype]]: Objectlength: 3[[Prototype]]: Array(0)
+var singlePromise = Promise.race([doWork(2), doWork(300), doWork(500)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM1989:2 8
+function doWork(num, time){
+    var promise = new Promise((resolve, reject)=>{
+             // Async Code
+        setTimeout(()=>{
+            if(num>10){
+                reject("Can't Compute Cube >10 and Ur Value is "+num);
+                
+            }
+            resolve(num**3);
+        }, time);
+    });
+    return promise;
+   
+}
+undefined
+var singlePromise = Promise.race([doWork(2, 5000), doWork(300,1000), doWork(500,7000)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM2109:2 Can't Compute Cube >10 and Ur Value is 300
+var singlePromise = Promise.race([doWork(2, 5000), doWork(3,1000), doWork(500,7000)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM2120:2 27
+var singlePromise = Promise.any([doWork(26, 2000), doWork(300,1000), doWork(5,7000)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM2203:2 125
+var singlePromise = Promise.any([doWork(2, 2000), doWork(300,1000), doWork(5,7000)]);
+singlePromise.then(results=>console.log(results)).catch(err=>console.log(err));
+
+Promise {<pending>}
+VM2222:2 8
+function payment(){
+    var pr = new Promise((res, rej)=>{
+        setTimeout(()=>{
+            res(true);
+        }
+    });
+    return pr;
+}
+VM2528:5 Uncaught SyntaxError: missing ) after argument list
+function payment(){
+    var pr = new Promise((res, rej)=>{
+        setTimeout(()=>{
+            res(true);
+        },5000)
+    });
+    return pr;
+}
+undefined
+function delInfo(){
+    var pr = new Promise((res, rej)=>{
+        setTimeout(()=>{
+            res("Del Info is ");
+        },5000)
+    });
+    return pr;
+}
+undefined
+function tracking(){
+    var pr = new Promise((res, rej)=>{
+        setTimeout(()=>{
+            res("Tracking Info is ");
+        },6000)
+    });
+    return pr;
+}
+undefined
+var pr = payment();
+pr.then(data=>{
+    if(data){
+        var p = delInfo();
+        console.log('Payment Success ');
+        p.then(result=>{
+            console.log(result);
+            var p2 = tracking();
+            p2.then(r=>{
+                console.log(r);
+            }
+        });
+    }
+}.catch(e=>console.log(e));
+VM3472:11 Uncaught SyntaxError: missing ) after argument list
+var pr = payment();
+pr.then(data=>{
+    if(data){
+        var p = delInfo();
+        console.log('Payment Success ');
+        p.then(result=>{
+            console.log(result);
+            var p2 = tracking();
+            p2.then(r=>{
+                console.log(r);
+            })
+        });
+    }
+}).catch(e=>console.log(e));
+Promise {<pending>}
+VM3491:5 Payment Success 
+VM3491:7 Del Info is 
+VM3491:10 Tracking Info is 
