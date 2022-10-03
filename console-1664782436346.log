@@ -1,0 +1,34 @@
+const radius = [3,1,2,4];
+
+Array.prototype.calculate = (logic) => {
+    const output = [];
+    this.forEach((Element)=>output.push(logic(Element)));
+    return output;
+}
+
+const area = (radius) => {return (Math.PI * radius *radius)};
+
+console.log(radius.calculate(area));
+VM98:5 Uncaught TypeError: this.forEach is not a function
+    at Array.calculate (<anonymous>:5:10)
+    at <anonymous>:11:20
+Array.calculate @ VM98:5
+(anonymous) @ VM98:11
+const radius = [3,1,2,4];
+
+Array.prototype.calculate = (logic) => {
+    console.log('This is ' ,this);
+    const output = [];
+    this.forEach((Element)=>output.push(logic(Element)));
+    return output;
+}
+
+const area = (radius) => {return (Math.PI * radius *radius)};
+
+console.log(radius.calculate(area));
+VM280:4 This is  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+VM280:6 Uncaught TypeError: this.forEach is not a function
+    at Array.calculate (<anonymous>:6:10)
+    at <anonymous>:12:20
+Array.calculate @ VM280:6
+(anonymous) @ VM280:12

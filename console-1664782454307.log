@@ -1,0 +1,33 @@
+function showScore(result){
+    console.log('Score is ',result);
+}
+function showError(err){
+    console.log('Error During Score  ',err);
+}
+let matchScore = 0;
+let time ;
+function liveScore(successCallBack, errorCallBack){
+    time = setInterval(()=>{
+        matchScore+=10;
+        if(matchScore>=100){
+        errorCallBack("Some Problem Occur ");
+            clearInterval(time);
+        };
+        successCallBack(matchScore);
+        
+    },2000);
+}
+undefined
+liveScore(showScore, showError);
+undefined
+VM106:2 Score is  10
+VM106:2 Score is  20
+VM106:2 Score is  30
+VM106:2 Score is  40
+VM106:2 Score is  50
+VM106:2 Score is  60
+VM106:2 Score is  70
+VM106:2 Score is  80
+VM106:2 Score is  90
+VM106:5 Error During Score   Some Problem Occur 
+VM106:2 Score is  100

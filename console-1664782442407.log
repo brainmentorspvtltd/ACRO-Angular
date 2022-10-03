@@ -1,0 +1,115 @@
+var obj = {
+    arr : [10,20,30,40,50,3,9,7,88],
+    even:[],
+    odd:[],
+    evenOdd:function(){
+        this.arr.forEach(ele=>{
+            if(ele%2==0){
+                this.even.push(ele);
+            }
+            else{
+            this.odd.push(ele);
+            }
+        });
+    }
+}
+undefined
+obj.even;
+[]
+obj.odd
+[]
+obj.evenOdd();
+undefined
+obj.even;
+(6) [10, 20, 30, 40, 50, 88]
+obj.odd;
+(3) [3, 9, 7]
+var obj = {
+    arr : [10,20,30,40,50,3,9,7,88],
+    even:[],
+    odd:[],
+    evenOdd:function(){
+        this.arr.forEach(function(ele){
+            if(ele%2==0){
+                this.even.push(ele);
+            }
+            else{
+            this.odd.push(ele);
+            }
+        });
+    }
+}
+undefined
+obj.evenOdd();
+VM649:8 Uncaught TypeError: Cannot read properties of undefined (reading 'push')
+    at <anonymous>:8:27
+    at Array.forEach (<anonymous>)
+    at Object.evenOdd (<anonymous>:6:18)
+    at <anonymous>:1:5
+(anonymous) @ VM649:8
+evenOdd @ VM649:6
+(anonymous) @ VM690:1
+var obj = {
+    arr : [10,20,30,40,50,3,9,7,88],
+    even:[],
+    odd:[],
+    evenOdd:function(){
+        var that = this;
+        this.arr.forEach(function(ele){
+            if(ele%2==0){
+                that.even.push(ele);
+            }
+            else{
+            that.odd.push(ele);
+            }
+        });
+    }
+}
+undefined
+obj.evenOdd();
+undefined
+obj.even;
+(6) [10, 20, 30, 40, 50, 88]
+obj.odd;
+(3) [3, 9, 7]
+var obj = {
+    arr : [10,20,30,40,50,3,9,7,88],
+    even:[],
+    odd:[],
+    evenOdd:function(){
+        
+        this.arr.forEach((ele)=>{
+            if(ele%2==0){
+                this.even.push(ele);
+            }
+            else{
+            this.odd.push(ele);
+            }
+        });
+    }
+}
+undefined
+obj.evenOdd();
+undefined
+obj.even;
+(6) [10, 20, 30, 40, 50, 88]
+obj.odd;
+(3) [3, 9, 7]
+var obj2 = {
+    show(){
+        console.log('I am this ', this);
+    }
+}
+undefined
+obj2.show();
+VM1321:3 I am this  {show: ƒ}show: ƒ show()[[Prototype]]: Object
+undefined
+var obj2 = {
+    disp:()=>{
+        console.log('I am this ', this);
+    }
+}
+undefined
+obj2.disp();
+VM1375:3 I am this  Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
