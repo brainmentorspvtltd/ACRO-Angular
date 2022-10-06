@@ -1,0 +1,45 @@
+var xmlHttpReq;
+if(window.XMLHttpRequest){
+    // Mozilla, Safari, Chrome, FF
+     xmlHttpReq = new XMLHttpRequest();
+}
+else{
+    // IE 
+    xmlHttpReq = new ActiveXObject("Microsoft.XMLHttp");
+    
+}
+
+xmlHttpReq.onreadystatechange = function(){
+    console.log('State  ',this.readyState);
+    if(this.readyState==4 && this.status == 200){
+        console.log(this.responseText);
+    }
+}
+
+xmlHttpReq.open('GET','https://api.giphy.com/v1/gifs/search?api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&q=Iron%20man&limit=5');
+xmlHttpReq.send(null);
+
+const URL = 'https://api.giphy.com/v1/gifs/search?api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&q=Iron%20man&limit=5';
+const promise = fetch(URL);
+promise.then(response=>{
+    response.json().then(data=>console.log(data)).catch(e=>console.log('INvalid JSON '));
+}).catch(err=>{
+    console.log('Server Error ', err);
+});
+const URL = 'https://api.giphy.com/v1/gifs/search?api_key=vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&q=Iron%20man&limit=5';
+const promise = fetch(URL);
+promise.then(response=>{
+    response.json().then(data=>console.log(data)).catch(e=>console.log('INvalid JSON '));
+}).catch(err=>{
+    console.log('Server Error ', err);
+});
+const options = {
+    method:'POST',
+    mode :'cors',
+    headers :{
+        'Content-Type':'application/json'
+    },
+    body:JSON.stringify({id:1001, name:'Ram'})
+}
+const promise = fetch(URL, options);
+const promise = fetch('https://jsonplaceholder.typicode.com/posts', options);
