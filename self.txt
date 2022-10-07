@@ -1,0 +1,6 @@
+Update Record
+Search
+Sort BY Id , Name , Desc
+URL - Show Image, Color - Show Color
+Clear All
+Load from Server - All the Data from the Network from the GITHUB.
