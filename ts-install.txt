@@ -1,0 +1,4 @@
+Step - 1 Install Node First - https://nodejs.org/en/
+
+Step -2 TS Install 
+npm i typescript -g
