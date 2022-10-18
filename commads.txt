@@ -1,0 +1,20 @@
+Setup Angular
+npm install -g @angular/cli
+
+ng new <projectname>
+
+e.g ng new firstapp
+
+move to the project directory
+cd <projectname>
+
+e.g cd firstapp
+
+start the application
+npm start or ng serve
+
+ng serve --open (Pick the default browser and open it there)
+
+Note : Angular default port 4200
+
+ng serve --open --port =9999 (Change the default port of the Angular)
