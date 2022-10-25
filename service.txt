@@ -1,0 +1,16 @@
+3rd Approach
+By Using Service / Provider
+What is Service?
+A) Service Contains the Business Logic
+b) Reusable 
+c) Data Sharing b/w the Components at Any Level.
+d) Interact with Server Calls (API Calls)
+E) Service uses DI 
+f) Service can inject another service.
+
+
+To Create a Service 
+A) Manual Way
+b) Automatic Way 
+ng g s <ServiceName>
+
