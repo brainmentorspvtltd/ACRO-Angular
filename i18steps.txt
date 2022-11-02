@@ -1,0 +1,61 @@
+Step - 1 Add Dependency
+	ng add @angular/localize
+
+
+Step-2 Put i18n Directive in HTML Template
+<h1 i18n>Hello Angular</h1>
+
+Or If use i18n in TS (Component) File
+
+this.title = $localize `Hi Angular`;
+
+
+Step-3 Add Config in angular.json file.
+Under the project section , and add the following dependencies
+"projects": {
+    "i18n-demo": {
+      "i18n": {
+        "sourceLocale":"en-US",
+        "locales": {
+         "en":{
+          "translation" :"src/locale/messages.en.xlf"
+         },
+         "hi":{
+          "translation" :"src/locale/messages.hi.xlf"
+         }
+        }
+      },
+
+
+Step-4 Formatting for Currency and date
+
+<p> {{sysDate | date}}</p>
+<p> {{amount | currency}}</p>
+
+
+Step-5 
+Generate the message xlf file
+ng extract-i18n —out-path src/locale
+
+Copy the locales and specify the language name
+E.g message.en.xlf, messages.hi.xlf
+And create the targets.
+
+Step-6 Specify  in the build (default locale) angular.json file
+"build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "localize":["en"],
+
+
+TestThis thing
+Ng serve - it works only one localisation 
+
+To test all of them
+
+Ng build —localize
+
+Copy the build in your server (IIS, Apache, Tomcat)
+
+http://localhost:portno/en
+http://localhost:portno/hi
